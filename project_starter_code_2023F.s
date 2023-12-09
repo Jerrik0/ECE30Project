@@ -5,7 +5,7 @@
 ////////////////////////
 
 // Partner1: Oliver Chen, A16963089
-// Partner2: Jerry Ko, (Student ID here)
+// Partner2: Jerry Ko, A16839629
 
 ////////////////////////
 //                    //
@@ -200,16 +200,15 @@ inPlaceMerge:
     add x13, x11, x2     // x13 = left + gap
     subsi xzr, x11, x10  // check if left+gap <= end
     b.gt end_for
-    // left+gap<=end
+
     add x10, x9, x2     // initialize right = left + gap and store right in x10
-    // check if arr[left] > arr[right]
-    
-    b.gt Swap    // swap(arr, left, right)
-    addi x11, x11, #1    // left++
+
+
+
 
     end_for:
-    b GetNextGap    // gap = nextgap(gap)
-    b inPlaceMerge // inPlaceMerge(arr, start, end, gap)
+    // ??? gap = nextgap(gap)
+    // inPlaceMerge(arr, start, end, gap);
 
     gap_less_than_1:
     ldur lr, [sp, #0]       // restore lr
